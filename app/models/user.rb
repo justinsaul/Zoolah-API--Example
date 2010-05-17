@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   acts_as_authentic
   
   has_and_belongs_to_many :roles
+  has_many :client_applications
+  has_one :zoolah, :class_name=>"ZoolahToken", :dependent => :destroy
   attr_accessible :login, :password, :password_confirmation, :email, :first_name, :last_name,:role_ids, :time_zone
   
   #for declarative authorization

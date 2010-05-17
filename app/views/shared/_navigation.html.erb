@@ -1,4 +1,14 @@
 <ul id="navlist">
 	<li><%= link_to "Home", root_path %></li>
-	<li>Test</li>
+	<%- if current_user %>
+	  <li><%= current_user.login%></li>
+	  <li><%= link_to "Connect with Zoolah", request_token_user_path(current_user)%></li>
+	  <li><%= link_to "Logout", logout_path%></li>
+	<%- else%>
+  	<li><%= link_to "Sign Up", register_path%></li>
+  	<li><%= link_to "Login", login_path%></li>
+  <%- end%>
+  <%- if current_user.zoolah %>
+    <h2>Balance: <%= current_user.zoolah.get_user_info["zoolahs_available"]%></h2>
+  <%- end%>
 </ul>

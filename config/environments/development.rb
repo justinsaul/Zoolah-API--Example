@@ -15,3 +15,7 @@ config.action_controller.perform_caching             = false
 
 # Don't care if the mailer can't send
 config.action_mailer.raise_delivery_errors = false
+
+ZOOLAH_OAUTH_KEY= "XiBpbIvyo4MIKY0AFNqEqg"
+ZOOLAH_OAUTH_SECRET = "AeU4NxP44DRer4lwzKHuSpEYXI6RdS72KjviXlU8U"
+ZOOLAH_OAUTH_SITE = "http://demo.zoolah.com"
