@@ -55,7 +55,7 @@ class UsersController < ApplicationController
     # Store the token in a model in your applications mapping it to your user
     session[:oauth_secret] = @request_token.secret
     #ZoolahToken.create :user=>current_user,:token=>@request_token.token,:secret=>@request_token.secret
-    redirect_to @request_token.authorize_url + "&auto_login=Facebook"
+    redirect_to @request_token.authorize_url
   end
 
   def authorize
@@ -71,6 +71,6 @@ class UsersController < ApplicationController
       flash[:error] = "Unauthorized!"
     end
 
-    redirect_to home_path
+    redirect_to root_path
  end  
 end

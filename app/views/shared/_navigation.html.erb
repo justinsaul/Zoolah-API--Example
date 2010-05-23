@@ -2,7 +2,7 @@
 	<li><%= link_to "Home", root_path %></li>
 	<%- if current_user %>
 	  <li><%= current_user.login%></li>
-	  <li><%= link_to "Connect with Zoolah", request_token_user_path(current_user)%></li>
+	  <li><%= link_to "Connect with Zoolah", request_token_users_path%></li>
 	  <li><%= link_to "Logout", logout_path%></li>
 	<%- else%>
   	<li><%= link_to "Sign Up", register_path%></li>
